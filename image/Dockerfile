@@ -17,8 +17,8 @@ ADD files/runScanner.sh /opt/brother/runScanner.sh
 
 ENV NAME="Scanner"
 ENV MODEL="MFC-L2740DW"
-ENV IPADDRESS="192.168.88.200"
-ENV USERNAME="ZOOEY"
+ENV IPADDRESS="127.0.0.1"
+ENV USERNAME="CHANGE_ME"
 
 #only set these variables, if inotify needs to be triggered (e.g., for CloudStation):
 #ENV SSH_USER="admin"

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  brscan:
+    build: ./image
+    image: brscan4:0.4.10-1
+    environment:
+      - MODEL=MFC-L2740DW
+      - IPADDRESS=192.168.88.200
+      - USERNAME=ZOOEY
+    network_mode: host
+    volumes:
+      - scans:/scans
+      - ./image/script:/opt/brother/scanner/brscan-skey/script/
+    restart: unless-stopped
+    stop_signal: SIGHUP
+
+volumes:
+  scans:
