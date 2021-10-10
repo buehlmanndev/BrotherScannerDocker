@@ -14,5 +14,17 @@ services:
     restart: unless-stopped
     stop_signal: SIGHUP
 
+  onedrive:
+    # ACHTUN muss interaktiv initialisiert werden  docker-compose run --no-deps onedrive
+    image: driveone/onedrive:latest
+    restart: unless-stopped
+    environment:
+      - ONEDRIVE_UID=1001
+      - ONEDRIVE_GID=1001
+      - ONEDRIVE_VERBOSE=1
+    volumes: 
+      - ./onedrive_conf:/onedrive/conf
+      - scans:/onedrive/data/zooey/Posteingang
+
 volumes:
   scans:
